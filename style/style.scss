@@ -1,0 +1,238 @@
+@import url(nullstyle.css);
+@font-face {
+	font-family: Futura;
+	src: url(../fonts/stylesheet.css);
+};//на Google Fonts платный, подключил через папку
+//====================================================
+.container {
+    max-width: 910px;
+    margin: 0 auto;
+        @media (max-width: 767px) {
+            max-width: 481px;
+        }
+        @media (max-width: 480px) {
+            max-width: 321px;
+        }
+        @media (max-width: 320px) {
+            max-width: none;
+        }
+}
+.title {
+    font-family: 'Futura', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3c3c3c;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-align: center;
+        &_white {
+            color: #fff;
+        }
+}
+.subtitle {
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: lighter;
+    color: #3c3c3c;
+    text-align: center;
+    line-height: 1.5em;
+    opacity: 0.8;
+        @media (max-width: 480px) {
+            width: 90%;
+        }
+        &_white {
+            color: #fff;
+        }
+}
+.block-indent {
+    margin: 20px 10px;
+    padding: 10% 0; 
+    @media (max-width: 767px) {
+       padding: 15% 0;
+    }  
+}
+//========================Header===========================
+.header {
+    background: url(../images/header-bg.png) 80%/ cover no-repeat;
+    &__content-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+    }
+    &__title {
+        font-size: 54px;
+        letter-spacing: .2em;
+            @media (max-width: 480px) {
+                font-size: 32px;
+            }
+    }
+    &__subtitle {
+        font-size: 22px;
+        padding-top: 1em;
+        width: 65%;
+        margin: 0 auto;
+            @media (max-width: 480px) {
+                font-size: 16px;
+            }
+    }
+    &__icon {
+        cursor: pointer;
+    }
+}
+//========================About===========================
+.border-wrapper {
+    border-right: 2px solid #3c3c3c;
+    border-bottom: 2px solid #3c3c3c;
+    border-left: 2px solid #3c3c3c;
+        &_white {
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        border-left: 2px solid #fff;        
+     }
+}
+.title_bordered {
+    position: relative;
+    overflow: hidden;
+    top: -17px;
+}
+.title_bordered:before,
+.title_bordered:after {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	width: 100%;
+	height: 2px;
+	background: #3c3c3c;
+	border: solid #FFF;
+    border-width: 0 100px; 
+        @media (max-width: 767px) {
+            border-width: 0 50px;
+        }
+        @media (max-width: 480px) {
+            border-width: 0 30px;
+        } 
+}
+.title_bordered_white::before,
+.title_bordered_white::after {
+    background: #fff;
+    border: 3px solid rgba(0 ,0, 0, 0.01);
+    background-clip: content-box;  
+    border-width: 0 100px;
+        @media (max-width: 767px) {
+            border-width: 0 50px;
+        }
+        @media (max-width: 480px) {
+            border-width: 0 30px;
+        }
+}
+.title_bordered::before {
+    margin-left: -100%;
+}
+.title_bordered::after {
+    margin-right: -100%;
+}
+.subtitle_bordered {
+    padding: 7%;
+}
+//========================Services===========================
+.services {
+    background: url(../images/services-bg.png) no-repeat 100%;        
+}
+//=========================What==============================
+.card {
+    &__item {
+        padding-top: 10%;
+        width: 60%;
+        margin: 0 auto;
+            &:last-child {
+                padding-bottom: 10%;
+            }
+            @media (max-width: 767px) {
+                width: 80%;
+            }
+    }
+    &__img {
+        text-align: center;
+    }
+    &__title {
+        font-size: 20px;
+        padding: 7% 0 3% 0;
+    }
+    &__subtitle {
+        font-size: 20px;
+    }
+}
+//=========================Gallery==============================
+.gallery { 
+
+    &__wrapper {
+        display: flex;
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+                margin: 0 auto;
+            }
+    }
+    &__item {
+        flex: 1 1 auto;
+        position: relative; 
+            &:first-child {
+                margin: 0 0 0 -5px;
+            } 
+            @media (max-width: 767px) {
+                width: 100%;
+                height: 237px;
+            }    
+        img {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 5px 5px;
+            object-fit: cover;    
+            @media (max-width: 767px) {
+             padding: 0 0 5px 0;
+            }     
+        }
+        p {
+           position: absolute;
+           bottom: 30px;
+           left: 30px;
+           font-family: 'Lato', sans-serif;
+           font-weight: bold;
+           font-size: 30px;
+           text-transform: uppercase;
+           color: #fff;
+        }
+    }
+}
+//========================Contact=============================
+.contact__btn {
+    display: block;
+    color: #fff;
+    background-color: #1c1c1c;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 3% 30%;
+        &:hover {
+            background-color: #000;
+             text-shadow: 1px 1px 10px #fff;     
+        }
+}
+//===================Footer=====================================
+.footer {
+    &__info {
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        color: #3c3c3c;
+        text-align: center;
+        opacity: 0.8;
+        padding-bottom: 5%;
+            a {
+                color: #3c3c3c;
+            }
+    }
+}
